@@ -10,6 +10,7 @@ import java.util.List;
 
 @Mapper(config = MappersConfig.class)
 public interface OfficeFloorMapper {
+
     @Mapping(target = "officeFloorId", source = "id")
     @Mapping(target = "floor", source = "floorNumber")
     OfficeFloorResponse toOfficeFloorResponse(OfficeFloor officeFloor);
