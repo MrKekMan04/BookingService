@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      file: changes/create-client-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: changes/create-office_floor-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: changes/create-seat-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: changes/create-reservation-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: changes/create-free_fixed_reservation.yml
+      relativeToChangelogFile: true

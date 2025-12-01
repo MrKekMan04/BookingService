@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-client-table
+      author: MrKekMan04
+      changes:
+        - createTable:
+            tableName: client
+            remarks: Таблица клиентов
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  remarks: Индектификатор клиента
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: first_name
+                  type: text
+                  remarks: Имя клиента
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: text
+                  remarks: Фамилия клиента
+                  constraints:
+                    nullable: false
