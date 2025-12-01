@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-seat-table
+      author: MrKekMan04
+      changes:
+        - createTable:
+            tableName: seat
+            remarks: Таблица мест в офисе
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  remarks: Идентификатор стола
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: office_floor_id
+                  type: bigint
+                  remarks: Идентификатор этажа офиса
+                  constraints:
+                    nullable: false
+              - column:
+                  name: fixed_client_id
+                  type: bigint
+                  remarks: Постоянная резервация клиента
+              - column:
+                  name: x_position
+                  type: numeric(19, 2)
+                  remarks: Позиция ординат места на карте
+                  constraints:
+                    nullable: false
+              - column:
+                  name: y_position
+                  type: numeric(19, 2)
+                  remarks: Позиция абсцисс места на карте
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rotation
+                  type: integer
+                  remarks: Идентификатор этажа офиса
+                  constraints:
+                    nullable: false
+
+        - createIndex:
+            indexName: seat_office_floor_id_idx
+            tableName: seat
+            columns:
+              - column:
+                  name: office_floor_id
+
+        - sql: create index seat_fixed_client_id__not_null_idx on seat (fixed_client_id) where fixed_client_id is not null;

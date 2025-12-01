@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-office_floor-table
+      author: MrKekMan04
+      changes:
+        - createTable:
+            tableName: office_floor
+            remarks: Таблица этажей офисов
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  remarks: Идентификатор этажа офиса
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: office_name
+                  type: text
+                  remarks: Название офиса
+                  constraints:
+                    nullable: false
+              - column:
+                  name: floor_number
+                  type: integer
+                  remarks: Этаж офиса
+                  constraints:
+                    nullable: false

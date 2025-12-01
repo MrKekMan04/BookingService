@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-reservation-table
+      author: MrKekMan04
+      changes:
+        - createTable:
+            tableName: reservation
+            remarks: Таблица бронирований
+            columns:
+              - column:
+                  name: reservation_date
+                  type: date
+                  remarks: Дата бронирования
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: table_id
+                  type: bigint
+                  remarks: Идентификатор стола
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: client_id
+                  type: bigint
+                  remarks: Идентификатор клиента
+                  constraints:
+                    nullable: false
