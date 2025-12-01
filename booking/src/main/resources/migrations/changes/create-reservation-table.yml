@@ -21,7 +21,7 @@ databaseChangeLog:
                     primaryKey: true
               - column:
                   name: client_id
-                  type: text
+                  type: bigint
                   remarks: Идентификатор клиента
                   constraints:
                     nullable: false
