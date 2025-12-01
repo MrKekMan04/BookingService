@@ -5,12 +5,12 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: free_fixed_reservation
-            remarks: Таблица бронирований
+            remarks: Таблица освобождения бронирования
             columns:
               - column:
                   name: reservation_date
                   type: date
-                  remarks: Индектификатор клиента
+                  remarks: Дата бронирования
                   constraints:
                     primaryKey: true
               - column:

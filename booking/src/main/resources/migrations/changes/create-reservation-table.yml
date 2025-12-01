@@ -10,7 +10,7 @@ databaseChangeLog:
               - column:
                   name: reservation_date
                   type: date
-                  remarks: Индектификатор клиента
+                  remarks: Дата бронирования
                   constraints:
                     primaryKey: true
               - column:
