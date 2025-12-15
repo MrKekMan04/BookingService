@@ -11,7 +11,7 @@ public record SeatOnOfficeFloorRequest(
         @FutureOrPresent(message = "`date` не может быть раньше сегодняшней")
         LocalDate date,
         @NotNull(message = "`officeFloorId` не может быть пустым")
-        @Positive(message = "`officeFloorId` не может быть отрицательным`")
+        @Positive(message = "`officeFloorId` не может быть отрицательным")
         Long officeFloorId
 ) {
 }
