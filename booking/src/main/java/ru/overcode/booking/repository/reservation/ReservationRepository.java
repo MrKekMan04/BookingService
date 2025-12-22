@@ -9,6 +9,7 @@ import ru.overcode.booking.entity.reservation.ReservationId;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, ReservationId> {
@@ -20,4 +21,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Reserv
              and r.id.reservationDate = :date
             """)
     List<Reservation> findAllByTableIdsAndReservationDate(Collection<Long> seatIds, LocalDate date);
+
+    Optional<Reservation> findByIdReservationDateAndClientId(LocalDate date, Long clientId);
 }

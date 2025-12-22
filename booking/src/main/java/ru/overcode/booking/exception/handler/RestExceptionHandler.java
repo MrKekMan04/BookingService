@@ -10,8 +10,11 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.overcode.booking.exception.ExceptionMessage;
+import ru.overcode.booking.exception.error.UnprocessableEntityException;
 import ru.overcode.booking.mapper.rest.ResponseMapper;
 import ru.overcode.booking.web.response.Response;
+
+import java.util.List;
 
 
 @RestControllerAdvice
@@ -40,5 +43,11 @@ public class RestExceptionHandler {
                         .map(exceptionMessage -> responseMapper.toError(ExceptionMessage.BAD_REQUEST
                                 .withParam("param", exceptionMessage)))
                         .toList()));
+    }
+
+    @ExceptionHandler(UnprocessableEntityException.class)
+    public ResponseEntity<Response<Void>> handleUnprocessableEntityException(UnprocessableEntityException e) {
+        return ResponseEntity.unprocessableEntity()
+                .body(Response.fail(List.of(e.toError())));
     }
 }

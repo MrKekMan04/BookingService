@@ -6,6 +6,11 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public enum ExceptionMessage implements CodeWithMessage {
 
+    SEAT_NOT_FOUND("Стол не найден"),
+    OFFICE_FLOOR_NOT_FOUND("Офис не найден"),
+    CLIENT_HAS_FIXED_SEAT("В офисе есть закрепленное место"),
+    CLIENT_HAS_ACTIVE_BOOKING("Есть забронированное место"),
+    SEAT_ALREADY_BOOKED("Есть забронированное место"),
     BAD_REQUEST("{param}"),
     INTERNAL_SERVER("Произошла непредвиденная ошибка");
 
